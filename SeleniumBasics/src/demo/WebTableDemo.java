@@ -27,12 +27,27 @@ public class WebTableDemo {
 		
 		//  c) Pick up one row at-a-time from the list and then create another list consisting of all the column values of
 		//     the row.
-		WebElement row = rows.get(1);
-		List<WebElement> columns = row.findElements(By.tagName("td"));		
+		int sum = 0;
+		for(int i=1; i<5; i++) {
+			WebElement row = rows.get(i);
+			List<WebElement> columns = row.findElements(By.tagName("td"));		
+			
+			//  d) Read the 2nd value from the list2 and save it in a variable
+			String price = columns.get(1).getText();
+			sum = sum + Integer.parseInt(price);
+			//System.out.println("Price = " + price);
+		}
 		
-		//  d) Read the 2nd value from the list2 and save it in a variable
-		String price = columns.get(1).getText();
-		System.out.println("Price = " + price);
+		int expectedSum = 858;
+		int actualSum = sum;
+		
+		if(expectedSum == actualSum) {
+			System.out.println("Test case passed");
+		}
+		else {
+			System.out.println("Test case Failed");
+		}
+		
 	}
 
 }
