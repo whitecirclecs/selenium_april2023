@@ -36,7 +36,7 @@ public class CalendarDemo {
 			
 			//  d) Read all the values from the list 2 and click on it as soon as the desired value is found
 			for (WebElement x : columns) {
-				if (x.getAttribute("data-day").equals("14")) {
+				if (x.getAttribute("data-day").equals("20")) {
 					x.click();
 					break; //stop searching the loop further once value 14 is found
 				}

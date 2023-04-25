@@ -6,10 +6,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class VerifyTitle {
 	
 	public static void main(String[] args) {
-		//	1) Open the browser
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--remote-allow-origins=*");		
-		ChromeDriver driver = new ChromeDriver(options); //Class object = new Class();
+		//	1) Open the browser				
+		ChromeDriver driver = new ChromeDriver(); //Class object = new Class();
 		
 		//	2) Navigate to the application.
 		driver.get("https://linkedin.com"); //object.method()

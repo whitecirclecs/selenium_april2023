@@ -23,7 +23,7 @@ public class ExplicitWaitDemo {
 		driver.findElement(By.id("start")).click();
 		
 		//	5) Wait for the text 'Hello World!' to be visible
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#finish > h4")));		
 		
 		//	6) Verify text 'Hello World!' is visible on the page
