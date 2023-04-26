@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ExplicitWaitDemo {
 	
+	
 	public static void main(String[] args) {
 		//	1) Open the browser
 		ChromeDriver driver = new ChromeDriver();

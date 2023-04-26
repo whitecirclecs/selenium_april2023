@@ -11,7 +11,7 @@ public class VerifyBtnStatus {
 	
 	ChromeDriver driver;
 	
-	@BeforeTest
+	@BeforeTest(alwaysRun=true)
 	public void launchApplication() {
 		//	1) Open the browser
 		driver = new ChromeDriver();
@@ -23,7 +23,7 @@ public class VerifyBtnStatus {
 		driver.get("https://letcode.in/buttons");
 	}
 	
-	@Test
+	@Test(groups = "regression")
 	public void verifyBtnStatus() {
 		//	4) Verify button with 'Disable' text is disabled
 		boolean btnStatus = driver.findElement(By.id("isDisabled")).isEnabled();
@@ -31,7 +31,7 @@ public class VerifyBtnStatus {
 	}
 
 //	5) Close the browser
-	@AfterTest
+	@AfterTest(alwaysRun=true)
 	public void closeBrowser() {
 		driver.quit();
 	}

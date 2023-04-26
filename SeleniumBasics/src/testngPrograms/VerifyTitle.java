@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class VerifyTitle {
 	ChromeDriver driver; // global object
 
-	@BeforeTest
+	@BeforeTest(alwaysRun=true)
 	public void launchApplication() {
 		// 1) Open the browser
 		driver = new ChromeDriver(); // Class object = new Class();
@@ -18,14 +18,14 @@ public class VerifyTitle {
 		driver.get("https://linkedin.com");
 	}
 
-	@Test
+	@Test(groups="regression")
 	public void titleVerification() {
-		String expectedTitle = "LinkedIn: Log In or Sign Upp";
+		String expectedTitle = "LinkedIn: Log In or Sign Up";
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(actualTitle, expectedTitle);
 	}
 
-	@AfterTest
+	@AfterTest(alwaysRun=true)
 	public void closeBrowser() {
 		driver.quit();
 	}
